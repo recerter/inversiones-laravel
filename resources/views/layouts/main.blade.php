@@ -153,7 +153,7 @@
 							</li>
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    <img src="{{ Auth::user()->photo }}" width="20" alt="">
+                                    <img src="{{ Auth::user()->avatar }}" width="20" alt="">
 									<div class="header-info">
 										<span>{{ Auth::user()->name }}</span>
 										<small>Name Rango</small>
@@ -180,7 +180,7 @@
                 </nav>
 				<div class="sub-header">
 					<div class="d-flex align-items-center flex-wrap mr-auto">
-						<h5 class="dashboard_bar">Dashboard</h5>
+						<h5 class="dashboard_bar">Dashboard > {{$pagina}}</h5>
 					</div>
 				</div>
 			</div>
@@ -196,7 +196,7 @@
             <div class="deznav-scroll">
 				<div class="main-profile">
 					<div class="image-bx">
-						<img src="{{ Auth::user()->photo }}" alt="">
+						<img src="{{ Auth::user()->avatar }}" alt="">
 						<a href="perfil?opc=settings"><i class="fa fa-cog" aria-hidden="true"></i></a>
 					</div>
 					<h5 class="name"><span class="font-w400">Hola,</span> {{ Auth::user()->name }}</h5>
@@ -343,8 +343,33 @@
 						</li>
                     </ul>
                 </div>
-            </div>        
+            </div>
+
+			<div class="content-body">
+				<div class="container-fluid">
+					<div class="form-head mb-sm-5 mb-3 d-flex flex-wrap align-items-center">
+						<h2 class="font-w600 title mb-2 mr-auto "> @if(isset($pagina)) {{$pagina}}  @else Inicio @endif </h2>
+						<div class="weather-btn mb-2">
+							<span class="mr-3 font-w600 text-black">Riesgo Pais</span>
+							<div class="style-1 default-select mr-3 ">riesgo</div>
+						</div>
+	
+						<div class="weather-btn mb-2">
+							<span class="mr-3 font-w600 text-black"><i class="fa fa-usd mr-2"></i>Dolar</span>
+							<div class="style-1 default-select mr-3 ">dolar </div>
+						</div>
+						<div class="weather-btn mb-2">
+							<span class="mr-3 font-w600 text-black"><i class="fa fa-usd mr-2"></i>Dolar Informal</span>
+							<div class="style-1 default-select mr-3 "> dolar</div>
+						</div>
+	
+						<div class="weather-btn mb-2">
+							<a href="favoritos.php"><span class="mr-3 font-w600 text-black"><i class="fa fa-cog mr-2"></i>Editar Favoritos</span></a>
+						</div>
+					</div>        
             @yield('content')
+				</div>
+			</div>
         </div>
         <!--**********************************
             Footer start

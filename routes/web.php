@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\ViewController::class, 'showDashboard']);
+Route::get('/perfil', [App\Http\Controllers\ViewController::class, 'showPerfil']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

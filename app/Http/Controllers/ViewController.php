@@ -10,4 +10,9 @@ class ViewController extends Controller
     {
         return view('dashboard');
     }
+
+    public function showPerfil()
+    {
+        return view('perfil');
+    }
 }
