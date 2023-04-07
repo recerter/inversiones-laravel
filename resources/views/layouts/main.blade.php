@@ -1,3 +1,10 @@
+@guest
+<script>
+    window.onload = function() {
+        window.location.href = "{{ route('login') }}";
+    }
+</script>
+@else
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -415,3 +422,4 @@
     <script src="css/vendor/swiper/js/swiper-bundle.min.js"></script>
 </body>
 </html>
+@endguest
