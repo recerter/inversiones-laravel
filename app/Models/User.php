@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'last_activity',
+        'avatar',
     ];
 
     /**
@@ -41,4 +43,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function lastSeen()
+{
+    return $this->last_activity->diffForHumans();
+}
 }
