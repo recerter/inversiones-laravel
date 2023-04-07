@@ -13,10 +13,10 @@
 @import url("flaticon/flaticon.css");
 @import url("flaticon-1/flaticon_1.css");
 @import url("icomoon/icomoon.css");
-@import url(../vendor/animate/animate.min.css);
-@import url(../vendor/aos/css/aos.min.css);
-@import url(../vendor/perfect-scrollbar/css/perfect-scrollbar.css);
-@import url(../vendor/metismenu/css/metisMenu.min.css);
+@import url("vendor/animate/animate.min.css");
+@import url("vendor/aos/css/aos.min.css");
+@import url("vendor/perfect-scrollbar/css/perfect-scrollbar.css");
+@import url("vendor/metismenu/css/metisMenu.min.css");
 :root {
   --primary: #eb8153;
   --secondary: #6418C3;
