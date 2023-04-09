@@ -369,10 +369,11 @@
 							<span class="mr-3 font-w600 text-black"><i class="fa fa-usd mr-2"></i>Dolar Informal</span>
 							<div class="style-1 default-select mr-3 "> dolar</div>
 						</div>
-	
+						@if($pagina == "Dashboard")
 						<div class="weather-btn mb-2">
 							<a href="favoritos.php"><span class="mr-3 font-w600 text-black"><i class="fa fa-cog mr-2"></i>Editar Favoritos</span></a>
 						</div>
+						@endif
 					</div>        
             @yield('content')
 				</div>
