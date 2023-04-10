@@ -15,10 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-Route::get('/', [App\Http\Controllers\ViewController::class, 'showDashboard']);
+Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
 Route::get('/perfil', [App\Http\Controllers\ViewController::class, 'showPerfil']);
-Route::get('/agregarInstrumento', [App\Http\Controllers\ViewController::class, 'showAgregarInstrumento']);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //USER
 Route::post('users/{userId}/roles/{roleId}', 'UserController@assignRole')->name('users.assignRole');
@@ -30,3 +28,6 @@ Route::put('users/{id}', 'UserController@update')->name('users.update');
 Route::delete('users/{id}', 'UserController@destroy')->name('users.destroy');
 
 //INSTRUMENTOS
+Route::get('/agregarInstrumento', [App\Http\Controllers\InstrumentoController::class, 'showInstrumentoAgregar']);
+Route::post('/agregarInstrumento', [App\Http\Controllers\InstrumentoController::class, 'store'])->name('instrumento.store');
+Route::get('/splitInstrumento', [App\Http\Controllers\InstrumentoController::class, 'showInstrumentoSplit']);

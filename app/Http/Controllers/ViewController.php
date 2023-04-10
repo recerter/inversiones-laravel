@@ -15,9 +15,5 @@ class ViewController extends Controller
     {
         return view('perfil');
     }
-    public function showAgregarInstrumento()
-    {
-        return view('instrumentos.agregar');
-    }
-
+    
 }
