@@ -11,7 +11,8 @@
             </div>
             <div class="card-body">
                 <div class="basic-form">
-                    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <form method="POST" action="{{ route('instrumento.store') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
                             Nombre
                             <input type="text" class="form-control input-default " placeholder="Nombre" name="nombre">
@@ -50,8 +51,13 @@
                             Descripcion
                             <textarea class="form-control" rows="4" id="descripcion" name="descripcion"></textarea>
                         </div>
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                            @endif
                         <div class="text-center mt-4">
-                            <button name="agregar" type="submit" value="agregar" class="btn btn-primary btn-block">Agregar</button>
+                            <button type="submit" class="btn btn-primary btn-block">Agregar</button>
                         </div>
                     </form>
                 </div>

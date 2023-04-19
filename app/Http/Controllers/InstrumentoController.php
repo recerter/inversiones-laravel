@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\instrumento;
 
 class InstrumentoController extends Controller
 {
@@ -16,5 +17,16 @@ class InstrumentoController extends Controller
         return view('instrumentos.split');
     }
 
-    
+    public function store(Request $request)
+{
+    $validatedData = $request->validate([
+        'name' => 'required',
+        'description' => 'required',
+    ]);
+
+    $instrumentos = new instrumento($validatedData);
+    $instrumentos->save();
+
+    return redirect()->route('tasks')->with('success', 'Instrumento agregada correctamente.');
+}
 }
